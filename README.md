@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wanderlust Explorer
+
+An interactive travel discovery app built with Next.js, React, TypeScript, and Tailwind CSS. Users can browse 100 local experiences, search by title, filter by category and destination, open detail pages, and save favorites for the current session.
+
+## Design References
+
+- [Airbnb search filters](https://www.airbnb.com/help/article/479): inspired the clean filter-first discovery pattern and the idea that filters should help users narrow a large catalog without feeling heavy.
+- [Viator travel activities](https://www.viator.com/): inspired the travel marketplace card structure with destination, rating, pricing, and browsable experience categories.
+- [Airbnb experience search guidance](https://www.airbnb.com/help/article/2493): informed the focus on destination-led discovery and shareable exploration flows.
+
+## Features
+
+- Home page with a full-viewport hero and CTA to `/experiences`.
+- Experiences explorer with 100 cards from a local TypeScript dataset.
+- Search by title using a case-insensitive regex.
+- Category and destination filters that combine with search.
+- Query parameters for shareable filtered URLs, for example `/experiences?search=sailing&category=Adventure&destination=Dubrovnik%2C+Croatia`.
+- Detail route for every experience at `/experiences/[id]`.
+- Session favorites managed with native React `useState`.
+- Favorites and profile pages that read the shared favorite state.
+- Responsive layout and active navbar styles.
+
+## Project Structure
+
+```text
+src/app
+  page.tsx
+  experiences/page.tsx
+  experiences/[id]/page.tsx
+  favorites/page.tsx
+  profile/page.tsx
+src/components
+  ExperienceCard.tsx
+  ExperienceExplorer.tsx
+  FilterBar.tsx
+  Navbar.tsx
+  SearchBar.tsx
+src/data
+  experiences.ts
+src/hooks
+  useDocumentTitle.ts
+  useExperienceFilters.ts
+src/types
+  experience.ts
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The production build prerenders the home page, explorer, favorites, profile, and all 100 experience detail routes.
