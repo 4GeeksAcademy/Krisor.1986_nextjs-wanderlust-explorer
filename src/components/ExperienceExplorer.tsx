@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { FilterBar } from "@/components/FilterBar";
 import { SearchBar } from "@/components/SearchBar";
-import { useFavorites } from "@/components/FavoritesProvider";
+import { useFavorites } from "@/context/favorites-context";
 import { experiences } from "@/data/experiences";
 import { useExperienceFilters } from "@/hooks/useExperienceFilters";
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useFavorites } from "@/components/FavoritesProvider";
+import { useFavorites } from "@/context/favorites-context";
 
 const links = [
   { href: "/", label: "Home" },

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FavoritesProvider } from "@/components/FavoritesProvider";
+import { FavoritesProvider } from "@/context/favorites-context";
 import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 

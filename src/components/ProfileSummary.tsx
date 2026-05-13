@@ -1,6 +1,6 @@
 "use client";
 
-import { useFavorites } from "@/components/FavoritesProvider";
+import { useFavorites } from "@/context/favorites-context";
 
 export function ProfileSummary() {
   const { favoriteCount } = useFavorites();

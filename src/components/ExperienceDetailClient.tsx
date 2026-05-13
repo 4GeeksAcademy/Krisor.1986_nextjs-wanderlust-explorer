@@ -1,7 +1,7 @@
 "use client";
 
 import { FavoriteButton } from "@/components/FavoriteButton";
-import { useFavorites } from "@/components/FavoritesProvider";
+import { useFavorites } from "@/context/favorites-context";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 import type { Experience } from "@/types/experience";
 

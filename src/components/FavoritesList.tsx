@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ExperienceCard } from "@/components/ExperienceCard";
-import { useFavorites } from "@/components/FavoritesProvider";
+import { useFavorites } from "@/context/favorites-context";
 import { experiences } from "@/data/experiences";
 
 export function FavoritesList() {
